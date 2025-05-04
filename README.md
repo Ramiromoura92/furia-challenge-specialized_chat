@@ -47,12 +47,12 @@ O projeto foi todo desenvolvido em python, utilizando Streamlit, OpenAI, Faiss, 
 
 ----
 
-*Pré requisitos*
+*Pré requisitos:*
 
 - Ter o python 3.10 ou superior instalada.
 - Ter uma api key do OpenAI ativa.
 
-Intruções:
+*Intruções:*
 
 1. Abra o terminal dentro do diretório do projeto.
 
@@ -82,13 +82,15 @@ Caso não tenha a versões acima disponíveis e/ou prefira rodar em docker, crie
 
 Acesse a aplicação localmente pelo link: http://localhost:8501/
 
-5 - Após abrir a página insira a sua api key do openai na barra lateral.
+5 - Após abrir a página insira a sua api key do openai na barra lateral, como mostrado abaixo.
+
+<img src="src/images/assistente_print.png" width=700>
 
 ### **Arquitetura**
 
 ---
 
-![Arquitetura solução](arquitetura_proposta.png)
+![Arquitetura solução](src/images/arquitetura_proposta.png)
 
 ### **Demo**
 
