@@ -4,12 +4,6 @@ import faiss
 import numpy as np
 import json
 
-import os
-
-for root, dirs, files in os.walk("."):
-    for file in files:
-        print(os.path.join(root, file))
-
 col1, col2 = st.columns([1, 5])  
 with col1:
     st.image("src/images/avatar.png", width=150)
@@ -25,10 +19,10 @@ if submit_button:
 client = OpenAI(api_key=input_key)
 
 # Carregar índice FAISS
-index = faiss.read_index("data/docs.index")
+index = faiss.read_index("src/data/docs.index")
 
 # Carregar os documentos
-with open("data/documents.json", "r", encoding="utf-8") as f:
+with open("src/data/documents.json", "r", encoding="utf-8") as f:
     documents = json.load(f)
 
 #import ipdb; ipdb.set_trace()
