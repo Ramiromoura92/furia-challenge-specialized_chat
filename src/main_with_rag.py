@@ -4,15 +4,26 @@ import faiss
 import numpy as np
 import json
 
-st.title("ChatGPT com RAG")
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+col1, col2 = st.columns([1, 5])  
+with col1:
+    st.image("images/avatar.png", width=150)
+with col2:
+    st.markdown("## Assistente FURIA")
+
+with st.sidebar.form(key='api_key'):
+    input_key = st.text_input("Informe sua API_Key aqui:", type='password')
+    submit_button = st.form_submit_button(label='Enviar')
+if submit_button:
+    st.success("API_Key submetida com sucesso!")
+
+client = OpenAI(api_key=input_key)
 
 # Carregar índice FAISS
-index = faiss.read_index("docs.index")
+index = faiss.read_index("data/docs.index")
 
 # Carregar os documentos
-with open("documents.json", "r", encoding="utf-8") as f:
+with open("data/documents.json", "r", encoding="utf-8") as f:
     documents = json.load(f)
 
 #import ipdb; ipdb.set_trace()
@@ -43,6 +54,7 @@ if prompt := st.chat_input("Faça sua pergunta:"):
     # Recupera os trechos relevantes
     retrieved_docs = get_relevant_chunks(prompt)
     context = "\n\n".join(retrieved_docs)
+
     print(context)
 
     # Monta a prompt com contexto recuperado

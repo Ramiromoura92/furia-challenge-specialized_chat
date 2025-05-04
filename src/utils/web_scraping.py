@@ -15,7 +15,7 @@ llm = ChatOpenAI(
     temperature=0.5,
 )
 
-# ✅ Novo schema usando Pydantic
+#schema usando Pydantic
 class TimeInfo(BaseModel):
     lineup_titular: str = Field(..., description="Line-up Titular")
     reservas: str = Field(..., description="Reservas")
@@ -31,9 +31,9 @@ class TimeInfo(BaseModel):
     noticias:str = Field(...,description="Noticias")
     campeonatos:str = Field(...,description="Próximos Campeonatos")
     partidas:str = Field(...,description="quarta-feira, 9 de abril de 2025, ")
+    rede_social:str = Field(...,description="rede social da Furia")
 
 
-# ✅ Atualizado: usando with_structured_output
 structured_llm = llm.with_structured_output(TimeInfo)
 
 def extract(content):
@@ -78,5 +78,5 @@ if __name__ == '__main__':
     extracted_contents = scrape_with_playwright(urls)
     print(extracted_contents)
 
-with open('results2.json','w',encoding='utf-8') as f:
+with open('../data/results.json','w',encoding='utf-8') as f:
     json.dump([res.model_dump()for res in extracted_contents],f, ensure_ascii=False, indent=4)
