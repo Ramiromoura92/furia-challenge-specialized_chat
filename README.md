@@ -11,6 +11,11 @@
 O projeto foi todo desenvolvido em python, utilizando Streamlit, OpenAI, Faiss, LangChain, Pydantic, Playwright, BeautifulSoup e Docker
 
 
+
+### Estrutura de pastas **📂**
+
+```sh
+
 ├── Dockerfile
 ├── README.md
 ├── requirements.txt
@@ -26,6 +31,7 @@ O projeto foi todo desenvolvido em python, utilizando Streamlit, OpenAI, Faiss, 
     │   ├── web_scraping.py
     └── main_with_rag.py
 
+```
 
 - **Dockerfile:** contém as definições do container (Docker).
 - **requirements.txt:** arquivo com todos os pacotes necessários para rodar este projeto.
