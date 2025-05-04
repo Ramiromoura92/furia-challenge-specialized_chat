@@ -1,7 +1,7 @@
 ## Challenge #1 **🧩**
 
 
-🎯 Esse projeto foi desenvolvido com o objetivo de resolver um desafio proposto pela FURIA na criação de um ambiente onde os fãs da FURIA CS pudessem usufruir.
+🎯 Esse projeto foi desenvolvido com o objetivo de resolver um desafio proposto pela FURIA na criação de um ambiente onde os fãs da FURIA CS pudessem usufuir, utilizando um assitente que retorna respostas customizadas e os atualizam sobre a equipe.
 
 
 ### **Tecnologias utilizadas 💡**
@@ -46,22 +46,34 @@ O projeto foi todo desenvolvido em python, utilizando Streamlit, OpenAI, Faiss, 
 1. Abra o terminal dentro do diretório do projeto.
 
 2. Instale as dependências do projeto, aqui o ideal é ter um ambiente virtual já criado.
+
     `pip install -r requirements.txt`
 
 3. Após a isntalação das depências, rodar os seguintes comandos:
+
     ` 1 -Para fazer o scraping da página: python3 web_scraping.py`
 
     ` 2 -Após o scraping, realizar o embbeding: python3 embbedings.py`
 
-    ` 2 -Após o embedding, subir a interação: streamlit run main_with_rag.py`
+    ` 3 -Após o embedding, subir a interação: streamlit run main_with_rag.py`
 
 Esta aplicação foi testa nas versões Python 3.10.0.
 Caso não tenha a versões acima disponível e/ou prefira rodar em docker, criei um Dockerfile para executar a aplicação. Execute os seguintes comandos na raíz do repositório para subir a aplicação:
 
 `docker build -t myapp .`
 
-`docker run -d -p 8501:8501 myapp:1.0 `
+`docker run -d -p 8501:8501 myapp `
 
 **Obs.:** Após rodar o último comando aparecerá um código do tipo: 6d7f3f69d0820f9c720a729bb8c4b6303cac170fe03a747aa71cd8a26f2b6e7d
 
+### **Arquitetura**
+
+---
+
 ![Arquitetura solução](arquitetura_proposta.png)
+
+### **Demo**
+
+---
+
+link:https://drive.google.com/file/d/1PdqK0EXMh-62FsJPYbb4Y87yIhTkRm0q/view?usp=drive_link
